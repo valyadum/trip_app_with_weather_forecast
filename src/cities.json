@@ -1,0 +1,42 @@
+[
+  {
+    "city": "London",
+    "picture": "../images/london.jpg"
+  },
+  {
+    "city": "Kyiv",
+    "picture": "../images/kyiv.jpg"
+  },
+  {
+    "city": "Berlin",
+    "picture": "../images/berlin.jpg"
+  },
+  {
+    "city": "Egypt",
+    "picture": "../images/egypt.jpg"
+  },
+  {
+    "city": "Maldives",
+    "picture": "../images/maldives.jpg"
+  },
+  {
+    "city": "New York",
+    "picture": "../images/new_york.jpg"
+  },
+  {
+    "city": "Paris",
+    "picture": "../images/paris.jpg"
+  },
+  {
+    "city": "Peru",
+    "picture": "../images/peru.jpg"
+  },
+  {
+    "city": "Tokyo",
+    "picture": "../images/tokyo.jpg"
+  },
+  {
+    "city": "Vienna",
+    "picture": "../images/vienna.jpg"
+  }
+]
