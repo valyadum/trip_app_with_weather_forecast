@@ -3,13 +3,13 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import getDayOfWeek from 'utils/getDayOfWeek';
-import API from 'utils/weatherAPI';
+import  { weatherOnDayAPI } from 'utils/weatherAPI';
 import css from './TodayForecast.module.css';
 
 function TodayForecast({ city, tripInfo}) {
   const [data, setData] = useState();
   useEffect(() => {
-    API.weatherOnDayAPI(city)
+    weatherOnDayAPI(city)
       ?.then(info => {
         setData(info);
       })

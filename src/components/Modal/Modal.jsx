@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import css from './Modal.module.css';
 
 
-const modalRoot = document.querySelector('#root-modal');
+// const modalRoot = document.querySelector('#root-modal');
 
 function Modal({ onClose,onClick }) {
   useEffect(() => {

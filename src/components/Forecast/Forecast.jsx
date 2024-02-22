@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react';
 import getDayOfWeek from 'utils/getDayOfWeek';
-import API from 'utils/weatherAPI';
+import { weatherOnPeriodAPI } from 'utils/weatherAPI';
 import css from './Forecast.module.css';
 
 
@@ -15,7 +15,7 @@ function Forecast({tripInfo}) {
       if (!city) {
         return;
       }
-      API.weatherOnPeriodAPI(startDay, endDay, city)
+      weatherOnPeriodAPI(startDay, endDay, city)
         .then(info => {
           setData(info);
         })
