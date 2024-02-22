@@ -8,29 +8,27 @@ function Form({ onClose, onClick }) {
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
 
-  const today = new Date().toString();
-  const dayNow = new Date().getTime();
-  function compareStartDay(date) {
-    const dayTrip = new Date(date).getTime(); 
-    const diff = (dayTrip - dayNow) / 1000;
-    const days = Math.floor(diff / 86400);
-    const lastDay = new Date(endDate).getTime();
-    if (days > 15 || days < 0 || dayTrip > lastDay) {
-      return alert(
-        'This date must not be later than 15 days from today and no earlier than today'
-      );
-    }
-    setStartDate(date);
+  const dayNow = new Date();
+
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
   }
-  function compereEndDay(date) {
-    const dayTrip = new Date(date).getTime();
-    const diff = (dayTrip - dayNow) / 1000;
-    const days = Math.floor(diff / 86400);
-    const firstDay = new Date(startDate).getTime();
-    if (days > 15 || dayTrip < firstDay) {
-      return alert('This date must not be later than 15 days from today');
-    }
-    setEndDate(date);
+
+  function formatDate(date) {
+    return [
+      date.getFullYear(),
+      padTo2Digits(date.getMonth() + 1),
+      padTo2Digits(date.getDate() + 1),
+    ].join('-');
+  }
+  function maxDay(date) {
+    const plusDay = 15 * 86400000;
+    const maxDate = new Date(date).getTime() + plusDay;
+    return [
+      new Date(maxDate).getFullYear(),
+      padTo2Digits(new Date(maxDate).getMonth() + 1),
+      padTo2Digits(new Date(maxDate).getDate()),
+    ].join('-');
   }
   function handleChange(event) {
     const { value, name } = event.target;
@@ -39,10 +37,10 @@ function Form({ onClose, onClick }) {
         setCity(value);
         break;
       case 'startDate':
-        compareStartDay(value);
+        setStartDate(value);
         break;
       case 'endDate':
-        compereEndDay(value);
+        setEndDate(value);
         break;
       default:
         break;
@@ -64,7 +62,6 @@ function Form({ onClose, onClick }) {
     setEndDate('');
     setCity('');
   }
-
 
   return (
     <form className={css.form} onSubmit={onAddTrip}>
@@ -103,7 +100,8 @@ function Form({ onClose, onClick }) {
           onChange={handleChange}
           value={startDate}
           name="startDate"
-          min={today}
+          min={formatDate(dayNow)}
+          max={maxDay(dayNow)}
           type="text"
           onFocus={e => (e.target.type = 'date')}
           onBlur={e => (e.target.type = 'text')}
@@ -122,6 +120,7 @@ function Form({ onClose, onClick }) {
           value={endDate}
           name="endDate"
           min={startDate}
+          max={maxDay(dayNow)}
           type="text"
           onFocus={e => (e.target.type = 'date')}
           onBlur={e => (e.target.type = 'text')}
@@ -132,7 +131,9 @@ function Form({ onClose, onClick }) {
         <button type="button" onClick={onClose} className={css.btnCancel}>
           Cancel
         </button>
-        <button type="submit" className={css.btnSave}> Save</button>
+        <button type="submit" className={css.btnSave}>
+          Save
+        </button>
       </div>
     </form>
   );
