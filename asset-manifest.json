@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/trip_app_with_weather_forecast/static/css/main.ae80bb50.css",
-    "main.js": "/trip_app_with_weather_forecast/static/js/main.132ce24e.js",
+    "main.js": "/trip_app_with_weather_forecast/static/js/main.0a654a09.js",
     "static/media/smokeCloads.png": "/trip_app_with_weather_forecast/static/media/smokeCloads.0a83b8084f29219ba8d7.png",
     "static/media/transparent-clouds-icon-weather-icon-business-icon-5da1b75c6e7d77.png": "/trip_app_with_weather_forecast/static/media/transparent-clouds-icon-weather-icon-business-icon-5da1b75c6e7d77.0937638315708793244526.148375b466333384ad96.png",
     "index.html": "/trip_app_with_weather_forecast/index.html",
     "main.ae80bb50.css.map": "/trip_app_with_weather_forecast/static/css/main.ae80bb50.css.map",
-    "main.132ce24e.js.map": "/trip_app_with_weather_forecast/static/js/main.132ce24e.js.map"
+    "main.0a654a09.js.map": "/trip_app_with_weather_forecast/static/js/main.0a654a09.js.map"
   },
   "entrypoints": [
     "static/css/main.ae80bb50.css",
-    "static/js/main.132ce24e.js"
+    "static/js/main.0a654a09.js"
   ]
 }
