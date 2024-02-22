@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import css from './Form.module.css';
-import cities from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/cities.json';
+import cities from '../../data/cities.json';
 
 function Form({ onClose, onClick }) {
   const [city, setCity] = useState('');
