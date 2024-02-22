@@ -6,7 +6,7 @@ import css from './Forecast.module.css';
 
 
 function Forecast({tripInfo}) {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([]);  
   const startDay = tripInfo.startDate; 
   const endDay = tripInfo.endDate;
   const city = tripInfo.city;
@@ -20,7 +20,7 @@ function Forecast({tripInfo}) {
           setData(info);
         })
         .catch(err => console.error(err));
-    }, [tripInfo]);
+    }, [tripInfo, city,endDay, startDay]);
 
   return (
     <div className={css.section}>
