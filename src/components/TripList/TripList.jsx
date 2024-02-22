@@ -2,7 +2,7 @@ import Modal from 'components/Modal/Modal';
 import React from 'react';
 import { useState } from 'react';
 import css from './TripList.module.css';
-import KievImg from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/images/kyiv.jpg';
+// import KievImg from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/images/kyiv.jpg';
 
 
 
