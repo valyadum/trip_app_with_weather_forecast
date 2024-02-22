@@ -2,7 +2,7 @@ import Modal from 'components/Modal/Modal';
 import React from 'react';
 import { useState } from 'react';
 import css from './TripList.module.css';
-import berlinImg from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/images/berlin.jpg';
+// import berlinImg from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/images/berlin.jpg';
 
 // !!! змінити вигляд дати
 
@@ -53,7 +53,7 @@ function TripList({ tripList, addTrip, deleteBtn, getInfoTrip }) {
           </li>
         );
       })}
-      <li className={css.items}>
+      {/* <li className={css.items}>
         <button
           type="button"
           className={css.deleteBtn}
@@ -74,7 +74,7 @@ function TripList({ tripList, addTrip, deleteBtn, getInfoTrip }) {
             <p className={css.date}>12.07.23 -15.07.23</p>
           </div>
         </button>
-      </li>
+      </li> */}
       <li>
         <button className={css.addButton} onClick={showModalToggle}>
           <p className={css.buttonText}>
