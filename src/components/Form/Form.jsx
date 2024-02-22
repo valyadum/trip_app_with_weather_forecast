@@ -7,16 +7,19 @@ function Form({ onClose, onClick }) {
   const [city, setCity] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
-  const dayNow = new Date().getTime();
 
+  const today = new Date().toString();
+  const dayNow = new Date().getTime();
+  console.log(today);
+  console.log(dayNow);
   function compareStartDay(date) {
-    const dayTrip = new Date(date).getTime();
+    const dayTrip = new Date(date).getTime(); 
     const diff = (dayTrip - dayNow) / 1000;
     const days = Math.floor(diff / 86400);
     const lastDay = new Date(endDate).getTime();
     if (days > 15 || days < 0 || dayTrip > lastDay) {
       return alert(
-        'This date must not be later than 15 days from today no earlier than today'
+        'This date must not be later than 15 days from today and no earlier than today'
       );
     }
     setStartDate(date);
@@ -49,9 +52,6 @@ function Form({ onClose, onClick }) {
   }
   function onAddTrip(event) {
     event.preventDefault();
-    if (city === '' || startDate === '' || endDate === '') {
-      return alert('Please enter you data');
-    }
     const newTrip = {
       city,
       startDate,
@@ -75,11 +75,15 @@ function Form({ onClose, onClick }) {
           <span>*</span> City
         </p>
         <select
+          required
           placeholder="Please select a city"
           onChange={handleChange}
           value={city}
           name="city"
         >
+          <option value="" disabled>
+            Please select a city
+          </option>
           {cities.map(({ city }) => {
             return (
               <option key={city} value={city}>
@@ -94,11 +98,16 @@ function Form({ onClose, onClick }) {
           <span>*</span>Start date
         </p>
         <input
-          type="date"
+          required
+          // type="date"
           placeholder="Select date"
           onChange={handleChange}
           value={startDate}
           name="startDate"
+          min={today}
+          type="text"
+          onFocus={e => (e.target.type = 'date')}
+          onBlur={e => (e.target.type = 'text')}
         />
       </label>
       <label className={css.label}>
@@ -106,11 +115,16 @@ function Form({ onClose, onClick }) {
           <span>*</span>End date
         </p>
         <input
-          type="date"
+          required
+          // type="date"
           placeholder="Select date"
           onChange={handleChange}
           value={endDate}
           name="endDate"
+          min={startDate}
+          type="text"
+          onFocus={e => (e.target.type = 'date')}
+          onBlur={e => (e.target.type = 'text')}
         />
       </label>
       <div className={css.tableFooter}>
