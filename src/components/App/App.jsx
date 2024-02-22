@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import Forecast from '../Forecast/Forecast';
 import TodayForecast from '../TodayForecast/TodayForecast';
-import TripPart from '../MainPage/TripPart.jsx';
-
+import TripPart from '../TripPart/TripPart.jsx';
+import css from './App.module.css';
 export const App = () => {
   const [city, setCity] = useState('Kyiv');
   const [tripInfo, setTripInfo] = useState({});
@@ -13,10 +13,10 @@ export const App = () => {
   };
 
   return (
-    <div>
-      <div>
-        <h3>
-          Weather <span>Forecast</span>
+    <div className={css.mainPage}>
+      <div className={css.tripPart}>
+        <h3 className={css.headerText}>
+          Weather <span className={css.span}>Forecast</span>
         </h3>
         <TripPart getInfoTrip={getInfoTrip} />
         <Forecast tripInfo={tripInfo} />

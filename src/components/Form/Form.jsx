@@ -3,53 +3,33 @@ import { useState } from 'react';
 import css from './Form.module.css';
 import cities from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/cities.json';
 
-
-
-// !!! додати помилку для заповнення форми, і прибрати можливість щоб кінцева дата була раніше ніж початкова
-
-
-function Form({onClose, onClick}) {
-  // const todayDate = new Date();
-  // const formatDate =
-  //   todayDate.getDate() < 10 ? `0${todayDate.getDate()}` : todayDate.getDate();
-  // const formatMonth =
-  //   todayDate.getMonth() < 10
-  //     ? `0${todayDate.getMonth()}`
-  //     : todayDate.getMonth();
-  // const formattedDate = [todayDate.getFullYear(), formatMonth, formatDate].join(
-  //   '-'
-  // );
-
+function Form({ onClose, onClick }) {
   const [city, setCity] = useState('');
   const [startDate, setStartDate] = useState('');
   const [endDate, setEndDate] = useState('');
   const dayNow = new Date().getTime();
-  // console.log(dayNow);
 
-   function compareStartDay(date) {
-     const dayTrip = new Date(date).getTime();
-    //  console.log(dayTrip);
-     const diff = (dayTrip - dayNow)/1000;
-     const days = Math.floor(diff / 86400);
-      const lastDay = new Date(endDate).getTime();
-
-     if (days>15 || days < 0|| dayTrip>lastDay)  {
+  function compareStartDay(date) {
+    const dayTrip = new Date(date).getTime();
+    const diff = (dayTrip - dayNow) / 1000;
+    const days = Math.floor(diff / 86400);
+    const lastDay = new Date(endDate).getTime();
+    if (days > 15 || days < 0 || dayTrip > lastDay) {
       return alert(
         'This date must not be later than 15 days from today no earlier than today'
       );
-     }
-     setStartDate(date);
-   }
+    }
+    setStartDate(date);
+  }
   function compereEndDay(date) {
-    console.log(date);
     const dayTrip = new Date(date).getTime();
-        const diff = (dayTrip - dayNow) / 1000;
+    const diff = (dayTrip - dayNow) / 1000;
     const days = Math.floor(diff / 86400);
     const firstDay = new Date(startDate).getTime();
-         if (days > 15 || dayTrip < firstDay) {
-           return alert('This date must not be later than 15 days from today');
-         }
-         setEndDate(date);
+    if (days > 15 || dayTrip < firstDay) {
+      return alert('This date must not be later than 15 days from today');
+    }
+    setEndDate(date);
   }
   function handleChange(event) {
     const { value, name } = event.target;
@@ -70,7 +50,7 @@ function Form({onClose, onClick}) {
   function onAddTrip(event) {
     event.preventDefault();
     if (city === '' || startDate === '' || endDate === '') {
-      return alert('Please enter you data')
+      return alert('Please enter you data');
     }
     const newTrip = {
       city,
@@ -86,6 +66,7 @@ function Form({onClose, onClick}) {
     setEndDate('');
     setCity('');
   }
+
 
   return (
     <form className={css.form} onSubmit={onAddTrip}>
@@ -110,7 +91,7 @@ function Form({onClose, onClick}) {
       </label>
       <label className={css.label}>
         <p>
-          <span>*</span>Start data
+          <span>*</span>Start date
         </p>
         <input
           type="date"
@@ -122,7 +103,7 @@ function Form({onClose, onClick}) {
       </label>
       <label className={css.label}>
         <p>
-          <span>*</span>End data
+          <span>*</span>End date
         </p>
         <input
           type="date"
@@ -133,7 +114,9 @@ function Form({onClose, onClick}) {
         />
       </label>
       <div className={css.tableFooter}>
-        <button type="button" onClick={onClose}>Cancel</button>
+        <button type="button" onClick={onClose}>
+          Cancel
+        </button>
         <button type="submit">Save</button>
       </div>
     </form>

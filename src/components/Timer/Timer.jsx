@@ -1,38 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
-//   function getTimeToTrip(tripDate) {
-//     console.log(tripDate);
-//     const countDownDate = new Date(tripDate).getTime();
-// console.log(countDownDate);
-//     const myFunc = setInterval(function () {
-//       const now = new Date().getTime();
-//       const timeLeft = countDownDate - now;
-//       const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-//       const hours = Math.floor(
-//         (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-//       );
-//       const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-//       const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-//       if (timeLeft < 0) {
-//         return alert('TIME UP!!');
-//       }
-//       return (
-// <div>
-//   <p>
-//     {days} <span>DAYS</span>
-//   </p>
-//   <p>
-//     {hours} <span>HOURS</span>
-//   </p>
-//   <p>
-//     {minutes} <span>MINUTES</span>
-//   </p>
-//   <p>
-//     {seconds} <span>SECONDS</span>
-//   </p>
-// </div>
-//       );
-//     }, 1000);
+import css from './Timer.module.css';
 
 function Timer({ timeToTrip }) {
   const [finishTime, setFinishTime] = useState();
@@ -71,18 +38,21 @@ function Timer({ timeToTrip }) {
   }, [tick]);
 
   return (
-    <div>
-      <p>
-        {diffDays} <span>DAYS</span>
+    <div className={css.section}>
+      <p className={css.item}>
+        {diffDays} <span className={css.span}>DAYS</span>
       </p>
-      <p>
-        {diffH.toString().padStart(2, '0')} <span>HOURS</span>
+      <p className={css.item}>
+        {diffH.toString().padStart(2, '0')}{' '}
+        <span className={css.span}>HOURS</span>
       </p>
-      <p>
-        {diffM.toString().padStart(2, '0')} <span>MINUTES</span>
+      <p className={css.item}>
+        {diffM.toString().padStart(2, '0')}{' '}
+        <span className={css.span}>MINUTES</span>
       </p>
-      <p>
-        {diffS.toString().padStart(2, '0')} <span>SECONDS</span>
+      <p className={css.item}>
+        {diffS.toString().padStart(2, '0')}{' '}
+        <span className={css.span}>SECONDS</span>
       </p>
     </div>
   );

@@ -1,0 +1,15 @@
+.section{
+    margin: 20px 0 40px 10px;
+}
+.searchBar{
+    background-color: rgba(232, 232, 232, 0.719);
+    border: none;
+    height: 35px;
+    width: 250px;
+    border-radius: 5px;
+    padding-left: 10px;
+    /* color: black; */
+}
+.searchBar::placeholder{
+    color: black;
+}

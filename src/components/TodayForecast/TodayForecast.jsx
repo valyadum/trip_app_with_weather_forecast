@@ -4,11 +4,10 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import getDayOfWeek from 'utils/getDayOfWeek';
 import API from 'utils/weatherAPI';
+import css from './TodayForecast.module.css';
 
 function TodayForecast({ city, tripInfo}) {
   const [data, setData] = useState();
-
-
   useEffect(() => {
     API.weatherOnDayAPI(city)
       ?.then(info => {
@@ -19,20 +18,28 @@ function TodayForecast({ city, tripInfo}) {
   
 
 return (
-  <div>
+  <div className={css.mainSection} >
+    <div className={css.section}>
     {data?.days?.map(({ sunriseEpoch, icon, temp, datetime }) => {
       return (
-        <div key={sunriseEpoch}>
-          <p>{getDayOfWeek(datetime)}</p>
-          <div>
-            <img src={require(`../../images/icons/${icon}.png`)} alt={icon} />
-            {Math.round(temp)}
+        <div key={sunriseEpoch} className={css.weather}>
+          <p className={css.dayOfWeek}>{getDayOfWeek(datetime)}</p>
+          <div className={css.temp}>
+            <img
+              src={require(`../../images/icons/${icon}.png`)}
+              alt={icon}
+              className={css.img}
+            />
+            <p className={css.tempText}>
+              {Math.round(temp)} <span className={css.celsius}>&#8451;</span> 
+            </p>
           </div>
-          <p>{data.address}</p>
+          <p className={css.cityName}>{data.address}</p>
         </div>
       );
     })}
-    {tripInfo?.startDate && <Timer timeToTrip={tripInfo.startDate} />}
+      {tripInfo?.startDate && <Timer timeToTrip={tripInfo.startDate} />}
+    </div>
   </div>
 );
 }

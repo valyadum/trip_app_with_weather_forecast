@@ -3,3 +3,67 @@
 /* https: //images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3YxMTYxLWItMDMxYi1sMjh0cHd0MC5qcGc.jpg */
 /* https: //www.creativefabrica.com/wp-content/uploads/2023/01/10/Puffy-Sea-Clouds-Cartoon-Background-57115687-1-1.png */
 /* https: //i.pinimg.com/736x/1c/f5/46/1cf5464fd7d9ad6961ec39846e56ad97.jpg */
+.mainSection {
+    height: 100%;
+    width: 35%;
+    position: fixed;
+    /* z-index: 1; */
+    top: 0;
+    overflow-x: hidden;
+    right: 0;
+}
+
+.section {
+    background: url(https://i.pinimg.com/736x/1c/f5/46/1cf5464fd7d9ad6961ec39846e56ad97.jpg)no-repeat right top;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 150px;
+}
+
+.weather {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dayOfWeek {
+    font-size: 36px;
+    font-weight: 700;
+
+}
+
+.temp {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 200px;
+    height: 150px;
+    font-size: 95px;
+    font-weight: 500;
+}
+
+.img {
+    width: 80%;
+}
+
+.tempText {
+    display: flex;
+
+}
+
+.celsius {
+    font-size: 24px;
+}
+
+.cityName {
+    font-size: 36px;
+    font-weight: 400;
+}

@@ -1,0 +1,25 @@
+.mainPage{
+   
+   display: flex;
+   gap: 20px;
+ 
+   min-height: 100vh; 
+}
+.tripPart{
+   height: 100%;
+      width: 60%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      left: 0;
+      margin: 30px;
+      /* background-color:rgb(185, 243, 243); */
+}
+.headerText{
+   padding: 10px;
+   font-size: 24px;
+}
+.span{
+   font-weight: 700;
+}

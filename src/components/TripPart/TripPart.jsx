@@ -5,6 +5,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import { nanoid } from 'nanoid';
 import cities from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/cities.json';
+import css from './TripPart.module.css';
 
 function TripPart({ getInfoTrip }) {
   const [tripList, setTripList] = useState(() => {
