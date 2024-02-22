@@ -1,16 +1,6 @@
-/* https: //gallery.yopriceville.com/var/albums/Free-Clipart-Pictures/Cloud-PNG/Clouds_PNG_Transparent_Clip_Art_PNG_Image.png?m=1461898501 */
-/* https: //st4.depositphotos.com/20252864/37810/i/450/depositphotos_378102618-stock-photo-clouds-cartoon-blue-sky-background.jpg */
-/* https: //images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA0L3YxMTYxLWItMDMxYi1sMjh0cHd0MC5qcGc.jpg */
-/* https: //www.creativefabrica.com/wp-content/uploads/2023/01/10/Puffy-Sea-Clouds-Cartoon-Background-57115687-1-1.png */
-/* https: //i.pinimg.com/736x/1c/f5/46/1cf5464fd7d9ad6961ec39846e56ad97.jpg */
 .mainSection {
-    height: 100%;
-    width: 35%;
-    position: fixed;
-    /* z-index: 1; */
-    top: 0;
-    overflow-x: hidden;
-    right: 0;
+    height: 35%;
+    width: 100%;
 }
 
 .section {
@@ -26,6 +16,7 @@
     justify-content: center;
     align-items: center;
     gap: 150px;
+    padding: 10px;
 }
 
 .weather {
@@ -67,3 +58,36 @@
     font-size: 36px;
     font-weight: 400;
 }
+/* ------for mobile----------- */
+@media (min-width:428px) {}
+/* -------for laptop------------ */
+@media (min-width:768px) {
+    .mainSection {
+            height: 100%;
+            width: 35%;
+            position: fixed;
+            /* z-index: 1; */
+            top: 0;
+            overflow-x: hidden;
+            right: 0;
+        }
+    
+        .section {
+            background: url(https://i.pinimg.com/736x/1c/f5/46/1cf5464fd7d9ad6961ec39846e56ad97.jpg)no-repeat right top;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 150px;
+        }
+    
+       
+}
+/* --------for computer--------- */
+@media (min-width:1158px) {}

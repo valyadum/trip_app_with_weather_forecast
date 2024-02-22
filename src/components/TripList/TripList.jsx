@@ -2,15 +2,14 @@ import Modal from 'components/Modal/Modal';
 import React from 'react';
 import { useState } from 'react';
 import css from './TripList.module.css';
-// import berlinImg from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/images/berlin.jpg';
+import KievImg from '/Users/valentynadumbrava/Documents/GitHub/trip_app_with_weather_forecast/src/images/kyiv.jpg';
 
-// !!! змінити вигляд дати
+
 
 function TripList({ tripList, addTrip, deleteBtn, getInfoTrip }) {
   const [showModal, setShowModal] = useState(false);
   const showModalToggle = () => {
     setShowModal(!showModal);
-    console.log('open');
   };
   function changeTypeDate(date) {
     const dateArray = date.split('-');
@@ -54,24 +53,11 @@ function TripList({ tripList, addTrip, deleteBtn, getInfoTrip }) {
         );
       })}
       {/* <li className={css.items}>
-        <button
-          type="button"
-          className={css.deleteBtn}
-          // onClick={() => {
-          //   deleteBtn(id);
-          // }}
-        >
-          <img
-            src="https://cdn-icons-png.flaticon.com/512/860/860829.png"
-            alt="Delete"
-            width={20}
-          />
-        </button>
         <button className={css.activeCard}>
-          <img src={berlinImg} alt="Berlin" className={css.img} />
+          <img src={KievImg} alt="Kiev" className={css.img} />
           <div className={css.textContainer}>
-            <p className={css.text}>Berlin</p>
-            <p className={css.date}>12.07.23 -15.07.23</p>
+            <p className={css.text}>Kiev (Example)</p>
+            <p className={css.date}>12.07.23-15.07.23</p>
           </div>
         </button>
       </li> */}

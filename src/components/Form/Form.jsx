@@ -10,8 +10,6 @@ function Form({ onClose, onClick }) {
 
   const today = new Date().toString();
   const dayNow = new Date().getTime();
-  console.log(today);
-  console.log(dayNow);
   function compareStartDay(date) {
     const dayTrip = new Date(date).getTime(); 
     const diff = (dayTrip - dayNow) / 1000;
@@ -72,7 +70,7 @@ function Form({ onClose, onClick }) {
     <form className={css.form} onSubmit={onAddTrip}>
       <label className={css.label}>
         <p>
-          <span>*</span> City
+          <span className={css.span}>*</span> City
         </p>
         <select
           required
@@ -80,6 +78,7 @@ function Form({ onClose, onClick }) {
           onChange={handleChange}
           value={city}
           name="city"
+          className={css.input}
         >
           <option value="" disabled>
             Please select a city
@@ -95,7 +94,7 @@ function Form({ onClose, onClick }) {
       </label>
       <label className={css.label}>
         <p>
-          <span>*</span>Start date
+          <span className={css.span}>*</span> Start date
         </p>
         <input
           required
@@ -108,11 +107,12 @@ function Form({ onClose, onClick }) {
           type="text"
           onFocus={e => (e.target.type = 'date')}
           onBlur={e => (e.target.type = 'text')}
+          className={css.input}
         />
       </label>
       <label className={css.label}>
         <p>
-          <span>*</span>End date
+          <span className={css.span}>*</span> End date
         </p>
         <input
           required
@@ -125,13 +125,14 @@ function Form({ onClose, onClick }) {
           type="text"
           onFocus={e => (e.target.type = 'date')}
           onBlur={e => (e.target.type = 'text')}
+          className={css.input}
         />
       </label>
       <div className={css.tableFooter}>
-        <button type="button" onClick={onClose}>
+        <button type="button" onClick={onClose} className={css.btnCancel}>
           Cancel
         </button>
-        <button type="submit">Save</button>
+        <button type="submit" className={css.btnSave}> Save</button>
       </div>
     </form>
   );

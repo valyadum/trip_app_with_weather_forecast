@@ -12,7 +12,6 @@ function Modal({ onClose,onClick }) {
       if (event.code !== 'Escape') {
         return;
       }
-      console.log('close');
       onClose();
     };
     window.addEventListener('keydown', closeByEsc);
@@ -25,8 +24,8 @@ function Modal({ onClose,onClick }) {
       <div className={css.overlay}>
         <div className={css.modal}>
           <div className={css.tableHead}>
-            <p>Create trip</p>
-            <button onClick={onClose}>x</button>
+            <p className={css.text}>Create trip</p>
+            <button onClick={onClose} className={css.closeBtn}>x</button>
           </div>
                   <Form onClose={onClose} onClick={onClick} />
         </div>

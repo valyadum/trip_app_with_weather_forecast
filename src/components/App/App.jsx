@@ -7,7 +7,6 @@ export const App = () => {
   const [city, setCity] = useState('Kyiv');
   const [tripInfo, setTripInfo] = useState({});
   const getInfoTrip = (city, startDate, endDate) => {
-    console.log(city);
     setCity(city);
     setTripInfo({ city, startDate, endDate });
   };
