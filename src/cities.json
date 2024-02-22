@@ -1,42 +1,42 @@
 [
   {
     "city": "London",
-    "picture": "../images/london.jpg"
+    "picture": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/London_Big_Ben_Phone_box.jpg/1200px-London_Big_Ben_Phone_box.jpg"
   },
   {
     "city": "Kyiv",
-    "picture": "../images/kyiv.jpg"
+    "picture": "https://www.kktv.com/resizer/05HXp7CHr4spZVlGsE0qpNMRWJc=/arc-photo-gray/arc3-prod/public/BXLROLUVPBHNZEWGJJSSBUQZTM.jpg"
   },
   {
     "city": "Berlin",
-    "picture": "../images/berlin.jpg"
+    "picture": "https://media.cntraveler.com/photos/5b914e80d5806340ca438db1/1:1/w_2250,h_2250,c_limit/BrandenburgGate_2018_GettyImages-549093677.jpg"
   },
   {
     "city": "Egypt",
-    "picture": "../images/egypt.jpg"
+    "picture": "https://hips.hearstapps.com/hmg-prod/images/horse-replace-002-64945a222f108.jpg"
   },
   {
     "city": "Maldives",
-    "picture": "../images/maldives.jpg"
+    "picture": "https://media.cntravellerme.com/photos/65046318702a806e20ff6e10/16:9/w_2560%2Cc_limit/1360554439"
   },
   {
     "city": "New York",
-    "picture": "../images/new_york.jpg"
+    "picture": "https://media.cntraveler.com/photos/63483e15ef943eff59de603a/3:2/w_3000,h_2000,c_limit/New%20York%20City_GettyImages-1347979016.jpg"
   },
   {
     "city": "Paris",
-    "picture": "../images/paris.jpg"
+    "picture": "https://t4.ftcdn.net/jpg/02/96/15/35/360_F_296153501_B34baBHDkFXbl5RmzxpiOumF4LHGCvAE.jpg"
   },
   {
     "city": "Peru",
-    "picture": "../images/peru.jpg"
+    "picture": "https://www.peru.travel/Contenido/AcercaDePeru/Imagen/en/6/0.0/Principal/Machu%20Picchu.jpg"
   },
   {
     "city": "Tokyo",
-    "picture": "../images/tokyo.jpg"
+    "picture": "https://media.istockphoto.com/id/1390815938/photo/tokyo-city-in-japan.jpg?s=612x612&w=0&k=20&c=VHiC3TlbXkb-Yf6WUYjh825Y0nGMCTkNUa9j8X8rVfY="
   },
   {
     "city": "Vienna",
-    "picture": "../images/vienna.jpg"
+    "picture": "https://res.klook.com/image/upload/Mobile/City/vfg4baggrck0egh36owk.jpg"
   }
 ]

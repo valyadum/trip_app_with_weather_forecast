@@ -1,11 +1,16 @@
-import React from 'react'
+import React from 'react';
 
-function SearchBar() {
+function SearchBar({ onChangeSearch }) {
   return (
     <div>
-      <input type="search" />
+      <input
+        type="text"
+        name="query"
+        placeholder="Search you trip"
+        onChange={onChangeSearch}
+      />
     </div>
   );
 }
 
-export default SearchBar
+export default SearchBar;

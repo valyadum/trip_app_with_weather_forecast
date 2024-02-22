@@ -1,0 +1,24 @@
+.form {
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+
+
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.tableFooter {
+    border-top: 1px solid lightgray;
+    padding-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 5px;
+
+}

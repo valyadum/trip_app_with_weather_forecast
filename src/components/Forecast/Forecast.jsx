@@ -1,25 +1,52 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useState } from 'react';
+import getDayOfWeek from 'utils/getDayOfWeek';
+import API from 'utils/weatherAPI';
 
-function Forecast() {
-    const API_KEY = 'T8XAJ96D29HW9TC7L4QHJLURF';
-    const FirstDay ="2024-02-19" //new Date();
-    const LastDay = "2024-02-29";
-    const city = "Tokyo";
-
-      // yyyy-M-d['T'H:m:s][.SSS][X] - формат дати
-    //   fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/${FirstDay}/${LastDay}?unitGroup=metric&include=days&key=${API_KEY}&contentType=json
-// `)
-    fetch(`https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${city}/today?unitGroup=metric&include=days&key=${API_KEY}&contentType=json
-`)
-      .then(response => response.json())
-      .then(console.log);
+function Forecast({tripInfo}) {
+  const [data, setData] = useState([]);
+  const startDay = tripInfo.startDate; 
+  const endDay = tripInfo.endDate;
+  const city = tripInfo.city;
+  
+    useEffect(() => {
+      if (!city) {
+        return;
+      }
+      API.weatherOnPeriodAPI(startDay, endDay, city)
+        .then(info => {
+          setData(info);
+        })
+        .catch(err => console.error(err));
+    }, [tripInfo]);
 
   return (
     <div>
-          <h4>Week</h4>
-          <ul>
-              <li>weather</li>
-          </ul>
+      <h4>Week</h4>
+      <ul>
+        {data.days?.map(
+          ({
+            sunriseEpoch,
+            icon,
+            tempmax,
+            tempmin,
+            datetime,
+          }) => {
+            return (
+              <li key={sunriseEpoch}>
+                <p>{getDayOfWeek(datetime)}</p>
+                <img
+                  src={require(`../../images/icons/${icon}.png`)}
+                  alt={icon}
+                />
+                <p>
+                  {Math.round(tempmax)}/{Math.round(tempmin)}
+                </p>
+              </li>
+            );
+          }
+        )}
+      </ul>
     </div>
   );
 }
